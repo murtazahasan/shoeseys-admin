@@ -18,14 +18,20 @@ function AddProduct() {
 
   useEffect(() => {
     setCategories([
-      "men-shirts",
-      "women-shirts",
-      "men-watches",
-      "women-purse",
-      "men-shoes",
-      "women-shoes",
-      "best-selling",
-      "featured-product",
+      "men-all",
+      "men-sneakers-casual-shoes",
+      "men-formal-shoes",
+      "men-sports-shoes",
+      "men-sandals-slippers",
+      "men-peshawari-chappal",
+      "men-women-socks",
+      "shoe-care-products",
+      "women-all",
+      "women-pumps-khusa",
+      "women-heels-sandals",
+      "women-loafers",
+      "women-sneakers-casual-shoes",
+      "women-slippers-chappal",
     ]);
   }, []);
 

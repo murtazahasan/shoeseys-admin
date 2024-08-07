@@ -10,6 +10,23 @@ function ProductList() {
   const [category, setCategory] = useState("");
   const [editingProduct, setEditingProduct] = useState(null); // New state for editing
 
+  const categories = [
+    "men-all",
+    "men-sneakers-casual-shoes",
+    "men-formal-shoes",
+    "men-sports-shoes",
+    "men-sandals-slippers",
+    "men-peshawari-chappal",
+    "men-women-socks",
+    "shoe-care-products",
+    "women-all",
+    "women-pumps-khusa",
+    "women-heels-sandals",
+    "women-loafers",
+    "women-sneakers-casual-shoes",
+    "women-slippers-chappal",
+  ];
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -83,14 +100,11 @@ function ProductList() {
           className="py-2 border rounded-md ml-4"
         >
           <option value="">All Categories</option>
-          <option value="men-shirts">Men Shirts</option>
-          <option value="women-shirts">Women Shirts</option>
-          <option value="men-watches">Men Watches</option>
-          <option value="women-purse">Women Purse</option>
-          <option value="men-shoes">Men Shoes</option>
-          <option value="women-shoes">Women Shoes</option>
-          <option value="best-selling">best selling</option>
-          <option value="featured-product">featured product</option>
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category.replace(/-/g, " ")}
+            </option>
+          ))}
         </select>
       </div>
       {products.length === 0 ? (
